@@ -1,0 +1,72 @@
+#*OQL[C++]: Extending C++ with an Object Query Capability.
+#@José A. Blakeley
+#year1995
+#confKDD
+#citation14
+#index0
+#arnetid2
+
+#*Transaction Management in Multidatabase Systems.
+#@Yuri Breitbart,Hector Garcia-Molina,Abraham Silberschatz
+#year2006
+#confICDE
+#citation22
+#index1
+#arnetid3
+
+#*Overview of the ADDS System.
+#@Yuri Breitbart,Tom C. Reyes
+#year2010
+#confICDM
+#citation-1
+#index2
+#arnetid4
+
+#*Multimedia Information Systems: Issues and Approaches.
+#@Stavros Christodoulakis,Leonidas Koveos
+#year2006
+#confICDCS
+#citation25
+#index3
+#arnetid5
+
+#*Active Database Systems.
+#@Umeshwar Dayal,Eric N. Hanson,Jennifer Widom
+#year2007
+#confKDD
+#citation-1
+#index4
+#arnetid6
+
+#*Yahoo Database Systems.
+#@Umeshwar Dayal,Eric N. Hanson,Jennifer Widom
+#year1996
+#confKDD
+#citation-1
+#index4
+#arnetid6
+
+#*Active Database Systems.
+#@Umeshwar Dayal,Eric N. Hanson,Jennifer Widom
+#year1998
+#confKDD
+#citation-1
+#index4
+#arnetid6
+
+
+#*Where Object-Oriented DBMSs Should Do Better: A Critique Based on Early Experiences.
+#@Angelika Kotz Dittrich,Klaus R. Dittrich
+#year1995
+#confPOPL
+#citation18
+#index5
+#arnetid7
+
+#*Where Object-Oriented DBMSs Should Do Better: A Critique Based on Early Experiences.
+#@Angelika Kotz Dittrich,Klaus R. Dittrich
+#year1995
+#confPOPL
+#citation18
+#index5
+#arnetid7
