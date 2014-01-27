@@ -1,4 +1,4 @@
-function [S,H,U,x_star] = hyperagent_newest(R,K,alpha)
+function [M,R,S,K,qual_auth_names] = hyperagent_newest(R,K,alpha)
 
 %========================= DATE PREPERATION ==============================
 %m = 126406; % # Vertices 
@@ -105,6 +105,7 @@ x_star = linprog(f,A_prep,b_prep,[],[],lb,ub);
 plot(x_star)
 % for i=1:size(S,1), find(S(i,:)==1), M(i,:), end
 
+%{
 % ============================ MM Rounding ===============================
 c = ceil(log(4*K)/log(K));
 acc_iter = ceil(c*log(K));
@@ -123,6 +124,7 @@ for i = 1:hm
         U(i,1) = 1;
     end
  %}
+%{
 end
 
 if A*U <= b 
@@ -150,4 +152,5 @@ for i = 1 : size(S_idx,2)
     fprintf('\n');
     disp('=========');
 end
+%}
 end
