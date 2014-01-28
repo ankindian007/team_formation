@@ -1,18 +1,25 @@
-alpha = 0.1;
+alpha = 0.1; % label propagation parameter
+K = 100; % Max size of team allowed
 
-% Single Skill Test
-K = 100;
-R = [100 zeros(1,11) 1000 zeros(1,9)];
-[M,R,S,K,qual_auth_names] = hyperagent_newest(R,K,alpha);
+% Old Single Skill Test
+% R = [100 zeros(1,11) 1000 zeros(1,9)]; % old single initz for R
 
-% Node Skill Matrix Q (m x |U|) % where U = {a1,a2,.....,aN} skills.
-Q = load('collab_skill_mat_out.txt');
-Q = Q(1:m_original,1:N);
+tic;
+[task_mat] = gen_param();
+fprintf('Time taken for task matrix build : %f \n',toc);
 
+density_vec = zeros(1,size(task_mat,1));
+team_sz_vec = zeros(1,size(task_mat,1));
 
-
-[S,H,U,x_star] = MM(M,R,S,K,qual_auth_names);
-
+for i = 1:size(task_mat,1) 
+    tic;
+    R = task_mat(i,:);
+    [M,R,S,K,qual_auth_names] = hyperagent_newest(R,K,alpha);
+    [S_sub,S,U,x_star] = MM(M,R,S,K,qual_auth_names);
+    team_sz_vec(1,i) = sum(max(S_sub,[],1));
+    density_vec(1,i) = size(S_sub,1)/team_sz_vec(1,i);
+    fprintf('Time taken for task # %d : %f \n',i,toc);
+end
 
 % Density (# of Nodes/ # of Edges) Curve V/S # of Skills for a given K
 

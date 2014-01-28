@@ -48,7 +48,7 @@ for i = 1 : m
     qual_auth_names{i} = auth_names{qual_vertices(i)};
 end
 
-%========================= LABEL PROPAGATION =============================
+% ========================= LABEL PROPAGATION =============================
 
 label = sum(Q(:,R>0),2);
 
