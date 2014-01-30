@@ -1,4 +1,3 @@
-
 function [R] = gen_param()
 
 %m = 126406; % # Vertices 
@@ -32,8 +31,8 @@ max_skill = max(S,[],1);
 
 R = zeros (110,22); % [(3:13) skills x (10) random gen] x [(22) skills]
 count =1;
-for team_sz = 3:13
-    for i = 1:10
+for team_sz = 3:5%13
+    for i = 1:5
         a = randperm(13,team_sz);
         R(count,a) = arrayfun(@(x) (randi(x)), max_skill(a));
         count = count +1;

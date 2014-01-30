@@ -51,7 +51,7 @@ for i = 1: size(S_i,1)
 end
 %}
 
-S
+%S
 count
 disp('Total time taken in S update:');
 toc       

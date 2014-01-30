@@ -1,4 +1,4 @@
-function [S_sub,S,U,x_star] = MM(M,R,S,K,qual_auth_names)
+function [S_sub,S,U,x_star] = MM(M,R,S,K,qual_auth_names,idx)
 %========================= MULTI-SET MULTI-COVER (MM)  ===================
 % N is the number of skillls 
 % Requirement vector R (|U| x 1)

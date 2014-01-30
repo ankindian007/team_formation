@@ -1,4 +1,4 @@
-function [M,R,S,K,qual_auth_names] = hyperagent_newest(R,K,alpha)
+function [M,R,S,K,qual_auth_names,idx] = hyperagent_newest(R,K,alpha)
 
 %========================= DATE PREPERATION ==============================
 %m = 126406; % # Vertices 
