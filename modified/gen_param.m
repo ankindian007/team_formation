@@ -6,15 +6,17 @@ N = 22; % # Skills
 
 % Hyper-incidence matrix H (n # Edges X m # Vertices)
 H_Idx = load('collab_sparse_tuples_out.txt');
+size(H_Idx)
 H = sparse(H_Idx(:,2)+1, H_Idx(:,1)+1, ones(size(H_Idx,1),1));
 n_original = size(unique(H_Idx(:,1)),1); % # Hyper Edges 
 m_original = size(unique(H_Idx(:,2)),1); % # Vertices 
 
 % Weight (Kapoor et al. 2013)
 W_mat = load('collab_weight_out.txt'); 
-
+size(W_mat)
 % Node Skill Matrix Q (m x |U|) % where U = {a1,a2,.....,aN} skills.
 Q = load('collab_skill_mat_out.txt');
+size(Q)
 Q = Q(1:m_original,1:N);
 
 % Extract the qualified edges and vertices.
