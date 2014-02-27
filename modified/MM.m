@@ -53,9 +53,11 @@ elseif count > 10000
 end
 count = count + 1;
 end
+
+fprintf('Number of rounding iterations: %d \n',count);
 S_idx = find(U>0)';
 S_sub = S(S_idx,:);
-fprintf('Number of rounding iterations: %d \n',count);
+
 % for i=1:size(S,1), find(S(i,:)==1), M(i,:), end
 for i = 1 : size(S_idx,2)
     fprintf('Group No.%d : \n',i)

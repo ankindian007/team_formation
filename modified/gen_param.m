@@ -1,9 +1,11 @@
-function [R] = gen_param()
+function [R] = gen_param(skill_range, rep)
 
 %m = 126406; % # Vertices 
 %n = 85233; % # Edges 
 N = 22; % # Skills
 
+% ================ Code for getting the max skill levels for each skill
+% ================================================================
 % Hyper-incidence matrix H (n # Edges X m # Vertices)
 H_Idx = load('collab_sparse_tuples_out.txt');
 H = sparse(H_Idx(:,2)+1, H_Idx(:,1)+1, ones(size(H_Idx,1),1));
@@ -29,10 +31,12 @@ Q = Q(qual_vertices,:);
 S = H' * Q;
 max_skill = max(S,[],1);
 
+% =================================================================
+
 R = zeros (110,22); % [(3:13) skills x (10) random gen] x [(22) skills]
 count =1;
-for skill_sz = 3:13 % Number of skills 
-    for i = 1:10 % Number of times each size experiment should run
+for skill_sz = skill_range % Number of skills 
+    for i = 1:rep % Number of times each size experiment should run
         a = randperm(13,skill_sz); % Choose any skill_sz no of skills
         R(count,a) = arrayfun(@(x) (randi(x)), max_skill(a));
         count = count +1;
