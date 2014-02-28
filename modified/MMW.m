@@ -1,4 +1,4 @@
-function [S_sub,S,U,x_star] = MM(M,R,S,K,qual_auth_names,idx)
+function [S_sub,S,U,x_star] = MMW(M,R,S,K,qual_auth_names,idx,W_selected)
 %========================= MULTI-SET MULTI-COVER (MM)  ===================
 % N is the number of skillls 
 % Requirement vector R (|U| x 1)
@@ -10,7 +10,7 @@ function [S_sub,S,U,x_star] = MM(M,R,S,K,qual_auth_names,idx)
 
 % # Extracted hyper-edges: hm
 hm = size(M,1);
-f = ones(hm,1);
+f = W_selected;
 % M'*f
 prep_idx = find(sum(M,1)>=1);
 A = -M';

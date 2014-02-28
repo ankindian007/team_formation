@@ -15,7 +15,7 @@ function[F] = OptimizeF(H, D_e, D_v, W, Y, alpha)
 [m, n] = size(H);
 %tmp = zeros(m, n);
 tmp = sparse([],[],[],m,n);
-tic;
+t_3 = toc;
 for i = 1 : n
     if D_e(i) ~= 0
         
@@ -24,21 +24,21 @@ for i = 1 : n
     end
 end
 disp('Time taken in tmp:');
-toc
-tic;
+t_4 = toc-t_3
+
 S = tmp * tmp';
 disp('Time taken in S:');
-toc
+t_5 = toc - t_4
 nnz(S)
 [S_i, S_j, ~] = find(S);
 size(S_i)
 size(S_j)
-tic;
+t_6 = toc - t_5 ;
 count = 0;
 S1 = S;
-tic;
+t_7 = toc - t_6
 S((S_j-1)*size(S,1) + S_i) = S((S_j-1)*size(S,1) + S_i) ./sqrt(D_v(S_i)) ./sqrt(D_v(S_j));
-toc
+t_8 = toc - t_7
 %{
 for i = 1: size(S_i,1)
     
@@ -72,7 +72,7 @@ end
 count 
 S
 %}
-tic;
+
 nnz(S)
 size(find(S==Inf))
 nnz(Y)
@@ -90,7 +90,7 @@ for i = 1 : 10000
     end
 end
 disp('Total time taken in diffusion process:');
-toc
+t_9 = toc - t_8;
 
 if i == 10000
     disp('OptimizeF didn''t converge!')
