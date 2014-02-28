@@ -1,4 +1,3 @@
-
 function[F] = HyperModifiedVectorized(H, label, test, alpha, W)
 
 % Initial Labels

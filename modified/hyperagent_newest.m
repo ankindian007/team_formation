@@ -81,3 +81,5 @@ S = H(:,sum(H(idx(1:K)',:),1)>0)';
 M = S * Q;
 W_selected = W(sum(H(idx(1:K)',:),1)>0);
 end
+
+
